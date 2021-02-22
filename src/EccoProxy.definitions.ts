@@ -5,7 +5,7 @@ export type ProxiedMethod<T = any> = (
 ) => any;
 
 export type ProxiedProperty<T extends object = any> = (
-  receivedValue: any,
+  originalValue: any,
   originalObject: T
 ) => any;
 

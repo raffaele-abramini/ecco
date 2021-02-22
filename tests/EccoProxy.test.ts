@@ -12,8 +12,8 @@ describe("Get: proxies existing properties", () => {
   let dummyProxy;
   it("correctly proxies a prop", () => {
     dummyProxy = EccoProxy(dummyObject(), {
-      booleanValue: (receivedValue) => {
-        return String(receivedValue) + " proxied, yes!";
+      booleanValue: (originalValue) => {
+        return String(originalValue) + " proxied, yes!";
       },
     });
     expect(dummyProxy.booleanValue).toEqual("true proxied, yes!");

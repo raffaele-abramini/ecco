@@ -29,12 +29,14 @@ import { EccoProxy } from "ecco-proxy";
 
 const proxiedObject = EccoProxy(
     myObject,
+    // ⬇️ GET - manipilate what happens when methods and props are invoked 
     {
-        methodName: (originalArgs, originalMethod, originalObject) => {},
-        propertyName: (originalArgs, originalObject) => {},
+        methodName: (receivedArguments, originalMethod, originalObject) => {},
+        propertyName: (originalValue, originalObject) => {},
     },
+    // ⬇️ SET - manipilate what happens when methods and props overwritten
     {
-        
+        otherPropertyName: (receivedValue, setValue) => {}
     });
 ````
 
